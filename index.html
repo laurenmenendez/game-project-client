@@ -12,6 +12,27 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <nav>
+      </nav>
+      <h1>Tic-Tac-Toe!</h1>
+      <form action="" id="sign-up-form">
+        <h3>Sign-Up</h3>
+        <input name="credentials[email]" type="email" placeholder="email" required>
+        <input name="credentials[password]" type="password" placeholder="password" required>
+        <input name="credentials[password_confirmation]" type="password" placeholder="confirm password" required>
+        <button>Submit</button>
+      </form>
+      <form action="" id="sign-in-form">
+        <h3>Sign-In</h3>
+        <input name="credentials[email]" type="email" placeholder="email" required>
+        <input name="credentials[password]" type="password" placeholder="password" required>
+        <button>Submit</button>
+      </form>
+      <form id="change-password">
+       <input type="password" name="passwords[old]" placeholder="old pw">
+       <input type="password" name="passwords[new]" placeholder="new pw">
+       <input type="submit" value="Change Password"/>
+     </form>
+     <button id="sign-out-button">Sign out</button>
     </body>
 </html>
