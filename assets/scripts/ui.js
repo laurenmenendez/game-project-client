@@ -12,6 +12,10 @@ const onSignInSuccess = function (response) {
   $('#messages').text('Successfully signed in.')
 }
 
+const onChangePasswordSuccess = function () {
+  $('#messages').text('Changed password successfully')
+}
+
 const onError = function (err) {
   console.error(err)
   $('#messages').text('Something went wrong, please try again.')
@@ -20,5 +24,6 @@ const onError = function (err) {
 module.exports = {
   onSignUpSuccess,
   onSignInSuccess,
+  onChangePasswordSuccess,
   onError
 }
