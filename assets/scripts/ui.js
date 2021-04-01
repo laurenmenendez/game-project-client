@@ -3,8 +3,13 @@
 const store = require('./store')
 
 const onSignUpSuccess = function () {
-  console.log('success')
   $('#messages').text('Thanks for signing up!')
+}
+
+const onSignInSuccess = function (response) {
+  console.log(response)
+  store.user = response.user
+  $('#messages').text('Successfully signed in.')
 }
 
 const onError = function (err) {
@@ -14,5 +19,6 @@ const onError = function (err) {
 
 module.exports = {
   onSignUpSuccess,
+  onSignInSuccess,
   onError
 }
