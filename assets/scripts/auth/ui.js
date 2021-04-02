@@ -1,6 +1,6 @@
 'use strict'
 
-const store = require('./store')
+const store = require('.././store')
 
 const onSignUpSuccess = function () {
   $('#messages').text('Thanks for signing up!')
