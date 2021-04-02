@@ -10,6 +10,16 @@ $(() => {
   $('#change-password').on('submit', authEvents.onChangePassword)
   $('#sign-out-button').on('click', authEvents.onSignOut)
 
-// game events
+// new game
   $('#new-game-button').on('click', gameEvents.onNewGame)
+// click handlers for each box
+  $('[data-id="0"]').on('click', gameEvents.onSelectCell)
+  $('[data-id="1"]').on('click', gameEvents.onSelectCell)
+  $('[data-id="2"]').on('click', gameEvents.onSelectCell)
+  $('[data-id="3"]').on('click', gameEvents.onSelectCell)
+  $('[data-id="4"]').on('click', gameEvents.onSelectCell)
+  $('[data-id="5"]').on('click', gameEvents.onSelectCell)
+  $('[data-id="6"]').on('click', gameEvents.onSelectCell)
+  $('[data-id="7"]').on('click', gameEvents.onSelectCell)
+  $('[data-id="8"]').on('click', gameEvents.onSelectCell)
 })
