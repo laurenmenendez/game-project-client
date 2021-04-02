@@ -1,13 +1,15 @@
 'use strict'
 
-const events = require('./auth/events')
+const authEvents = require('./auth/events')
+const gameEvents = require('./game/events')
 
 $(() => {
 // auth events
-  $('#sign-up-form').on('submit', events.onSignUp)
-  $('#sign-in-form').on('submit', events.onSignIn)
-  $('#change-password').on('submit', events.onChangePassword)
-  $('#sign-out-button').on('click', events.onSignOut)
-})
+  $('#sign-up-form').on('submit', authEvents.onSignUp)
+  $('#sign-in-form').on('submit', authEvents.onSignIn)
+  $('#change-password').on('submit', authEvents.onChangePassword)
+  $('#sign-out-button').on('click', authEvents.onSignOut)
 
 // game events
+  $('#new-game-button').on('click', gameEvents.onNewGame)
+})
