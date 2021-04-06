@@ -17,12 +17,14 @@ const onSelectCell = function (event) {
   // console.log($(event.target).text())
   store.user.index = $(event.target).attr('data-id')
   const index = store.user.index
-  if ($(event.target).text() === '') {
+  if (store.user.status === true && $(event.target).text() === '') {
     api.updateGame(index)
       .then(ui.onUpdateSuccess)
       .catch(ui.onError)
-  } else {
+  } else if (!($(event.target).text() === '')) {
     $('#messages').text('Please select blank cell and try again.')
+  } else {
+    $('#messages').text('Please start new game to play again.')
   }
 }
 
