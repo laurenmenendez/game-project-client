@@ -22,9 +22,9 @@ const onSelectCell = function (event) {
       .then(ui.onUpdateSuccess)
       .catch(ui.onError)
   } else if (!($(event.target).text() === '')) {
-    $('#messages').text('Please select blank cell and try again.')
+    $('#messages').addClass('alert alert-dismissible alert-danger').text('Please select blank cell and try again.')
   } else {
-    $('#messages').text('Please start new game to play again.')
+    $('#messages').addClass('alert alert-dismissible alert-danger').text('Please start new game to play.')
   }
 }
 

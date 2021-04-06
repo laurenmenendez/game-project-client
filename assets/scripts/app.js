@@ -5,10 +5,10 @@ const gameEvents = require('./game/events')
 
 $(() => {
 // initial page view
-  $('.change-password').hide()
+  $('#change-password').hide()
   $('#change-password-button').hide()
-  $('.sign-out').hide()
-  $('.get-games').hide()
+  $('#sign-out-button').hide()
+  $('#get-games-button').hide()
   $('.gameboard').hide()
   $('#new-game-button').hide()
 // auth events

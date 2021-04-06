@@ -7,17 +7,17 @@ const onNewGameSuccess = function (response) {
   store.user.game = response.game
   store.user.value = [true, 'x']
   store.user.status = true
-  $('#messages').text('Started new game!')
+  $('#messages').addClass('alert alert-dismissible alert-success').text('Started new game!')
 }
 
 const onUpdateSuccess = function (response) {
-  $('#messages').text('Nice move!')
+  $('#messages').addClass('alert alert-dismissible alert-success').text('Nice move!')
   store.user.game = response.game
   if (store.user.value[0] === true) {
-    $(`[data-id=${store.user.index}]`).text('x')
+    $(`[data-id=${store.user.index}]`).addClass('text-info').text('X')
     store.user.value[1] = 'o'
   } else {
-    $(`[data-id=${store.user.index}]`).text('o')
+    $(`[data-id=${store.user.index}]`).addClass('text-warning').text('O')
     store.user.value[1] = 'x'
   }
   store.user.value[0] = !(store.user.value[0])
@@ -36,23 +36,23 @@ const onUpdateSuccess = function (response) {
     }
   }
   if ((x.includes(0) && x.includes(1) && x.includes(2)) || (x.includes(0) && x.includes(3) && x.includes(6)) || (x.includes(0) && x.includes(4) && x.includes(8)) || (x.includes(2) && x.includes(4) && x.includes(6)) || (x.includes(2) && x.includes(5) && x.includes(8)) || (x.includes(6) && x.includes(7) && x.includes(8)) || (x.includes(3) && x.includes(4) && x.includes(5)) || (x.includes(1) && x.includes(4) && x.includes(7))) {
-    $('#messages').text('Game over. X wins!')
+    $('#messages').addClass('alert alert-dismissible alert-warning').text('Game over. X wins!')
     store.user.status = false
   } else if ((o.includes(0) && o.includes(1) && o.includes(2)) || (o.includes(0) && o.includes(3) && o.includes(6)) || (o.includes(0) && o.includes(4) && o.includes(8)) || (o.includes(2) && o.includes(4) && o.includes(6)) || (o.includes(2) && o.includes(5) && o.includes(8)) || (o.includes(6) && o.includes(7) && o.includes(8)) || (o.includes(3) && o.includes(4) && o.includes(5)) || (o.includes(1) && o.includes(4) && o.includes(7))) {
-    $('#messages').text('Game over. O wins!')
+    $('#messages').addClass('alert alert-dismissible alert-warning').text('Game over. O wins!')
     store.user.status = false
   } else if (!(cells.includes(''))) {
-    $('#messages').text('Tie! How about a rematch?')
+    $('#messages').addClass('alert alert-dismissible alert-light').text('Tie! How about a rematch?')
     store.user.status = false
   }
 }
 
 const onGetGamesSuccess = function (response) {
-  $('#messages').text(`You have played ${response.games.length} games.`)
+  $('#messages').addClass('alert alert-dismissible alert-info').text(`You have played ${response.games.length} games.`)
 }
 const onError = function (err) {
   console.error(err)
-  $('#messages').text('Something went wrong, please try again.')
+  $('#messages').addClass('alert alert-dismissible alert-danger').text('Something went wrong, please try again.')
 }
 
 module.exports = {

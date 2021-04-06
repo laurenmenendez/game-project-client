@@ -16,6 +16,7 @@ const onSignUp = function (event) {
 
 const onSignIn = function (event) {
   event.preventDefault()
+  $('.row').children().text('')
   const form = event.target
   const formData = getFormFields(form)
   console.log(formData)
