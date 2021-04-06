@@ -33,9 +33,20 @@ const updateGame = function (index) {
   })
 }
 
+const getGames = function () {
+  return $.ajax({
+    method: 'GET',
+    url: config.apiUrl + '/games/',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+})
+}
+
 module.exports = {
   newGame,
-  updateGame
+  updateGame,
+  getGames
 }
 
 // "index": ${index},

@@ -28,7 +28,14 @@ const onSelectCell = function (event) {
   }
 }
 
+const onGetGames = function () {
+  api.getGames()
+    .then(ui.onGetGamesSuccess)
+    .catch(ui.onError)
+}
+
 module.exports = {
   onNewGame,
-  onSelectCell
+  onSelectCell,
+  onGetGames
 }

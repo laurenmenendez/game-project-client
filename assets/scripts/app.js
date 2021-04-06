@@ -12,6 +12,8 @@ $(() => {
 
 // new game
   $('#new-game-button').on('click', gameEvents.onNewGame)
+// get games
+  $('#get-games-button').on('click', gameEvents.onGetGames)
 // click handlers for each box
   $('[data-id="0"]').on('click', gameEvents.onSelectCell)
   $('[data-id="1"]').on('click', gameEvents.onSelectCell)

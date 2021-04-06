@@ -11,6 +11,7 @@ const onNewGameSuccess = function (response) {
 }
 
 const onUpdateSuccess = function (response) {
+  $('#messages').text('Nice move!')
   store.user.game = response.game
   if (store.user.value[0] === true) {
     $(`[data-id=${store.user.index}]`).text('x')
@@ -23,26 +24,32 @@ const onUpdateSuccess = function (response) {
 
   const cells = store.user.game.cells
   console.log(cells)
-  // let x = []
-  // let o = []
-  // for (let i = 0; i < cells.length; i++) {
-  //   if (cells[i] === 'x') {
-  //     let index = cells.indexOf(cells[i])
-  //     x.push(index)
-  //     console.log(x)
-  //   } else if (cells[i] === 'o') {
-  //     let index = cells.indexOf(cells[i])
-  //     o.push(index)
-  //     console.log(o)
-  //   }
-  // }
+  const x = []
+  const o = []
+  for (let i = 0; i < cells.length; i++) {
+    if (cells[i] === 'x') {
+      x.push(i)
+      console.log(x)
+    } else if (cells[i] === 'o') {
+      o.push(i)
+      console.log(o)
+    }
+  }
+  if ((x.includes(0) && x.includes(1) && x.includes(2)) || (x.includes(0) && x.includes(3) && x.includes(6)) || (x.includes(0) && x.includes(4) && x.includes(8)) || (x.includes(2) && x.includes(4) && x.includes(6)) || (x.includes(2) && x.includes(5) && x.includes(8)) || (x.includes(6) && x.includes(7) && x.includes(8)) || (x.includes(3) && x.includes(4) && x.includes(5)) || (x.includes(1) && x.includes(4) && x.includes(7))) {
+    $('#messages').text('Game over. X wins!')
+    store.user.status = false
+  } else if ((o.includes(0) && o.includes(1) && o.includes(2)) || (o.includes(0) && o.includes(3) && o.includes(6)) || (o.includes(0) && o.includes(4) && o.includes(8)) || (o.includes(2) && o.includes(4) && o.includes(6)) || (o.includes(2) && o.includes(5) && o.includes(8)) || (o.includes(6) && o.includes(7) && o.includes(8)) || (o.includes(3) && o.includes(4) && o.includes(5)) || (o.includes(1) && o.includes(4) && o.includes(7))) {
+    $('#messages').text('Game over. O wins!')
+    store.user.status = false
+  } else if (!(cells.includes(''))) {
+    $('#messages').text('Tie! How about a rematch?')
+    store.user.status = false
+  }
 }
-  // if ((cells[0] === cells[1] && cells[0] === cells[2]) || (cells[0] === cells[3] && cells[0] === cells[6]) || (cells[0] === cells[4] && cells[0] === cells[8]) || (cells[2] === cells[4] && cells[2] === cells[6]) || (cells[2] === cells[5] && cells[2] === cells[8]) || (cells[6] === cells[7] && cells[6] === cells[8]) || (cells[3] === cells[4] && cells[3] === cells[5]) || (cells[1] === cells[4] && cells[1] === cells[7])) {
-    // $('#messages').text('Game over')
-    // store.user.status = false
-//   }
-// }
 
+const onGetGamesSuccess = function (response) {
+  $('#messages').text(`You have played ${response.games.length} games.`)
+}
 const onError = function (err) {
   console.error(err)
   $('#messages').text('Something went wrong, please try again.')
@@ -51,5 +58,6 @@ const onError = function (err) {
 module.exports = {
   onNewGameSuccess,
   onUpdateSuccess,
+  onGetGamesSuccess,
   onError
 }
