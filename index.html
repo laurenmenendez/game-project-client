@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Tic-Tac-Toe!</title>
+      <title>Tic-Tac-Toe, Solo</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -13,43 +13,55 @@
     </head>
     <body>
       <h1>Tic-Tac-Toe!</h1>
-      <form action="" id="sign-up-form">
-        <h3>Sign-Up</h3>
-        <input name="credentials[email]" type="text" placeholder="email" required>
-        <input name="credentials[password]" type="password" placeholder="password" required>
-        <input name="credentials[password_confirmation]" type="password" placeholder="confirm password" required>
-        <button>Submit</button>
-      </form>
-      <form action="" id="sign-in-form">
-        <h3>Sign-In</h3>
-        <input name="credentials[email]" type="text" placeholder="email" required>
-        <input name="credentials[password]" type="password" placeholder="password" required>
-        <button>Submit</button>
-      </form>
-      <h3>Change Password</h3>
-      <form id="change-password">
-       <input type="password" name="passwords[old]" placeholder="old pw">
-       <input type="password" name="passwords[new]" placeholder="new pw">
-       <input type="submit" value="Change Password"/>
-     </form>
-     <h3>Sign Out</h3>
-     <button id="sign-out-button">Sign out</button>
-     <h3>Get Games</h3>
-     <button id="get-games-button">Get games</button>
-     <div id="messages"></div>
-     <h3>Gameboard</h3>
-     <button id="new-game-button">New game</button>
-     <div class="container">
-        <div class="row">
-          <div class="col-4 box" data-id="0"></div>
-          <div class="col-4 box" data-id="1"></div>
-          <div class="col-4 box" data-id="2"></div>
-          <div class="col-4 box" data-id="3"></div>
-          <div class="col-4 box" data-id="4"></div>
-          <div class="col-4 box" data-id="5"></div>
-          <div class="col-4 box" data-id="6"></div>
-          <div class="col-4 box" data-id="7"></div>
-          <div class="col-4 box" data-id="8"></div>
+      <div class="sign-up">
+        <form action="" id="sign-up-form">
+          <h3>Sign up to play!</h3>
+          <input name="credentials[email]" type="text" placeholder="email" required>
+          <input name="credentials[password]" type="password" placeholder="password" required>
+          <input name="credentials[password_confirmation]" type="password" placeholder="confirm password" required>
+          <button>Submit</button>
+        </form>
+      </div>
+      <div class="sign-in">
+        <form action="" id="sign-in-form">
+          <h3>Sign in to get started</h3>
+          <input name="credentials[email]" type="text" placeholder="email" required>
+          <input name="credentials[password]" type="password" placeholder="password" required>
+          <button>Submit</button>
+        </form>
+      </div>
+      <div class="change-password">
+        <h3>Change password</h3>
+        <form id="change-password">
+         <input type="password" name="passwords[old]" placeholder="old pw">
+         <input type="password" name="passwords[new]" placeholder="new pw">
+         <input type="submit" value="Change Password"/>
+       </form>
+      </div>
+      <div class="sign-out">
+       <h3>Sign out</h3>
+       <button id="sign-out-button">Sign out</button>
+      </div>
+      <div class="get-games">
+       <h3>Games played</h3>
+       <button id="get-games-button">Get games</button>
+      </div>
+     <div id="messages" class="col-2 messages"></div>
+     <div class="gameboard">
+       <h3>Gameboard</h3>
+       <button id="new-game-button">New game</button>
+       <div class="container">
+          <div class="row">
+            <div class="col-4 box" data-id="0"></div>
+            <div class="col-4 box" data-id="1"></div>
+            <div class="col-4 box" data-id="2"></div>
+            <div class="col-4 box" data-id="3"></div>
+            <div class="col-4 box" data-id="4"></div>
+            <div class="col-4 box" data-id="5"></div>
+            <div class="col-4 box" data-id="6"></div>
+            <div class="col-4 box" data-id="7"></div>
+            <div class="col-4 box" data-id="8"></div>
+          </div>
         </div>
       </div>
     </body>

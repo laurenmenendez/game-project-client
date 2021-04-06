@@ -21,6 +21,9 @@ const onSignIn = function (event) {
   api.signIn(formData)
     .then(ui.onSignInSuccess)
     .catch(ui.onError)
+  $('.change-password').show()
+  $('.get-games').show()
+  $('.gameboard').show()
 }
 
 const onChangePassword = function (event) {

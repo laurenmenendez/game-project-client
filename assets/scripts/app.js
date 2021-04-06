@@ -4,6 +4,11 @@ const authEvents = require('./auth/events')
 const gameEvents = require('./game/events')
 
 $(() => {
+// initial page view
+  $('.change-password').hide()
+  $('.sign-out').hide()
+  $('.get-games').hide()
+  $('.gameboard').hide()
 // auth events
   $('#sign-up-form').on('submit', authEvents.onSignUp)
   $('#sign-in-form').on('submit', authEvents.onSignIn)
