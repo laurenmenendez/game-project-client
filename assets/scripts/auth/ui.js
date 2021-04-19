@@ -4,6 +4,7 @@ const store = require('.././store')
 
 const onSignUpSuccess = function () {
   $('#messages').addClass('alert alert-dismissible alert-success').text('Thanks for signing up!')
+  $('#sign-up-form').trigger('reset')
   $('.sign-up').hide()
 }
 
@@ -16,12 +17,14 @@ const onSignInSuccess = function (response) {
   $('.gameboard').show()
   $('#new-game-button').show()
   $('#sign-out-button').show()
+  $('#sign-in-form').trigger('reset')
   $('.sign-in').hide()
   $('.sign-up').hide()
 }
 
 const onChangePasswordSuccess = function () {
   $('#messages').addClass('alert alert-dismissible alert-success').text('Changed password successfully')
+  $('#change-password').trigger('reset')
   $('#change-password').hide()
 }
 
@@ -33,6 +36,7 @@ const onSignOutSuccess = function () {
   $('.gameboard').hide()
   $('#new-game-button').hide()
   $('#sign-out-button').hide()
+  $('#change-password').hide()
   $('.sign-in').show()
   $('.sign-up').show()
 }
